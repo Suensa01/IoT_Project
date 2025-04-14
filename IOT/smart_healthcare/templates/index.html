@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Healthcare Dashboard</title>
+</head>
+<body>
+  <h1>Live Patient Vitals</h1>
+  <table border="1">
+    <tr>
+      <th>Timestamp</th>
+      <th>Heart Rate (bpm)</th>
+      <th>Temperature (°C)</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+      <td>{{ d.timestamp }}</td>
+      <td>{{ d.heart_rate }}</td>
+      <td>{{ d.temperature }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
