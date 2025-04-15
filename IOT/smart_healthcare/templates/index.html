@@ -1,11 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Smart Healthcare Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f7f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: center;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    th {
+      background-color: #3498db;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+
+      td:before {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #666;
+      }
+
+      td:nth-of-type(1):before { content: "Timestamp"; }
+      td:nth-of-type(2):before { content: "Heart Rate (bpm)"; }
+      td:nth-of-type(3):before { content: "Temperature (°C)"; }
+    }
+  </style>
 </head>
 <body>
   <h1>Live Patient Vitals</h1>
-  <table border="1">
+  <table>
     <tr>
       <th>Timestamp</th>
       <th>Heart Rate (bpm)</th>
