@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Agriculture Dashboard</title>
+    <meta http-equiv="refresh" content="5"> 
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f9f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2f6650;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2fdf7;
+        }
+
+        tr:hover {
+            background-color: #e2f3ec;
+        }
+    </style>
+</head>
+<body>
+    <h2>Live Farm Sensor Data</h2>
+    <table>
+        <tr>
+            <th>Soil Moisture (%)</th>
+            <th>Temperature (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Rain</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.soil_moisture }}</td>
+            <td>{{ item.temperature }}</td>
+            <td>{{ item.humidity }}</td>
+            <td>{{ item.rain }}</td>
+            <td>{{ item.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
